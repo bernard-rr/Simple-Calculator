@@ -1,0 +1,242 @@
+<html>
+
+<head> 
+
+    <style>
+
+    .symbol {
+        width: 30;
+        height: 30;
+        text-align-last: center;
+    }
+
+    </style>
+</head>
+
+    <body>
+
+        <h1>Bernard's Calculator</h1> 
+
+        <table border = 1>
+            <tr>
+                <td colspan = 4 align = right>
+                    <input type = textbox  id = result width = 200 value = 0>
+                </td>
+            </tr>
+
+            <tr>
+
+                <td class="symbol" center id = clear>AC</td>
+
+                <td class="symbol" id = leftp>(</td>
+
+                <td class="symbol" id = rightp>)</td>
+
+                <td class="symbol" id = div>/</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="symbol" id = num7>7</td>
+
+                <td class="symbol"r id = num8>8</td>
+
+                <td class="symbol" id = num9>9</td>
+
+                <td class="symbol" id = mult>*</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="symbol" id = num4>4</td>
+
+                <td class="symbol" id = num5>5</td>
+
+                <td class="symbol" id = num6>6</td>
+
+                <td class="symbol" id = sub>-</td>
+
+            </tr>
+
+            <tr>
+
+                <td class="symbol" id = num1>1</td>
+
+                <td class="symbol" id = num2>2</td>
+
+                <td class="symbol" id = num3>3</td>
+
+                <td class="symbol" id = plus>+</td>
+
+            </tr>
+            
+            <tr>
+                <td class="symbol" colspan = 2 id = num0>0</td>
+                
+                <td class="symbol" id = decimal>.</td>
+                
+                <td id = equal>=</td>
+            </tr>
+
+        </table>
+
+<script>
+    let result = document.getElementById("result");
+
+let clear = document.getElementById("clear");
+
+let equal = document.getElementById("equal");
+
+// Note that arrays use square brackets and not any other types of bracket
+// Always confirm that your spellings are correct
+
+let symbols = document.getElementsByClassName("symbol")
+/*[num0, num1, num2, num3, num4, 
+                num5, num6, num7, num8, num9, 
+                plus, mult, div, sub, decimal, 
+                rightp, leftp] 
+                */             
+
+for (let i = 0; i < symbols.length; i++)
+    symbols[i].addEventListener("click" , printSymbol);
+
+    
+
+      function clearscreen (e)
+    
+    {
+        
+        document.getElementById("result").value = 0;
+
+    }
+
+        // this function prints clicked object as a digit
+
+    function printSymbol(e)
+
+    {
+            let obj = e.target;
+
+        if (result.value == 0)
+
+            result.value = obj.textContent;
+
+        else
+
+            result.value = result.value + obj.textContent;
+
+    }
+    
+    clear.addEventListener("click", clearscreen);
+    
+    equal.addEventListener("click" , e => result.value = eval(result.value));
+
+
+
+
+   
+
+    //the code below is an optional way of adding a function to the clear variable
+
+    //clear.addEventListener("click" , e => document.getElementById("result").textContent = 0);
+
+
+
+    // EXAMPLE OF HOW ARRAYS WORK
+    /*let a = [9, 8 , 7, 6]
+    let b = ["apple" , "lemon" , "peach"]
+   
+
+    for (let i=0; i < b.length; i ++)
+    alert (b[i])
+    */
+
+   //remember to declare the element before you call the element
+
+   
+/*
+    let num1 = document.getElementById("num1");
+
+    let num2 = document.getElementById("num2");
+
+    let num3 = document.getElementById("num3");
+
+    let num4 = document.getElementById("num4");
+
+    let num5 = document.getElementById("num5");
+
+    let num6 = document.getElementById("num6");
+
+    let num7 = document.getElementById("num7");
+
+    let num8 = document.getElementById("num8");
+
+    let num9 = document.getElementById("num9");
+
+    let num0 = document.getElementById("num0");
+
+    let sub = document.getElementById("sub");
+
+    let mult = document.getElementById("mult");
+
+    let plus = document.getElementById("plus");
+
+    let div = document.getElementById("div");
+
+    let decimal = document.getElementById("decimal");
+
+    let rightp = document.getElementById("rightp");
+
+    let leftp = document.getElementById("leftp");
+    */
+
+
+
+
+
+/*
+num1.addEventListener("click" , printsymbol);
+
+num2.addEventListener("click" , printsymbol);
+
+num3.addEventListener("click" , printsymbol);
+
+num4.addEventListener("click" , printsymbol);
+
+num5.addEventListener("click" , printsymbol);
+
+num6.addEventListener("click" , printsymbol);
+
+num7.addEventListener("click" , printsymbol);
+
+num8.addEventListener("click" , printsymbol);
+
+num9.addEventListener("click" , printsymbol);
+
+num0.addEventListener("click" ,printsymbol);
+
+sub.addEventListener("click" , printsymbol);
+
+mult.addEventListener("click" , printsymbol);
+
+plus.addEventListener("click" , printsymbol);
+
+div.addEventListener("click" , printsymbol);
+
+decimal.addEventListener("click" , printsymbol);
+
+rightp.addEventListener("click" , printsymbol);
+
+leftp.addEventListener("click" , printsymbol);
+
+*/
+    
+
+</script>
+
+    </body>
+
+</html>
+
